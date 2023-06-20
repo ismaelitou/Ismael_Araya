@@ -10,5 +10,5 @@
 - crispy-forms
 
 --- Credenciales ---
-Usuario: admin
-Contraseña: 3sm12l3t4
+- Usuario: admin
+- Contraseña: 3sm12l3t4
