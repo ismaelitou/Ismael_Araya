@@ -1,0 +1,79 @@
+{% extends "Base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Contacto{% endblock %}</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'img/plant-logo.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script src="{% static 'js/validacion.js' %}"></script>
+    <script src="{% static 'js/api.js' %}"></script>
+    
+</head>
+<body>
+    <div style="margin-bottom: -20px;" class="container-fluid">
+        <br>
+        <h1 class="display-2" style="color: #ffffff;">Contacto</h1>
+    </div>
+    <div id="parrafos" class="container-fluid" >
+        <div class="row">
+            <div class="col-sm-6">
+                <div id="formulario" class="container-fluid">
+                    <br>
+                    <form id="mi-formulario" method="post">
+                        <div class="form-group">
+                            <p class="labelsForm">Nombre</p>
+                            <input class="inputFormato form-control" type="text" name="nombre" id="nombre">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <p class="labelsForm">Apellido</p>
+                            <input class="inputFormato form-control" type="text" name="apellido" id="apellido">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <p class="labelsForm">Correo</p>
+                            <input class="inputFormato form-control" type="text" name="correo" id="correo">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <p class="labelsForm">Teléfono (Ejemplo: 912345678)</p>
+                            <input class="inputFormato form-control" type="text" id="fono" name="fono">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <p class="labelsForm">Mensaje, reclamo, recomendaciones, entre otros</p>
+                            <input class="formatoMensaje form-control" type="text" name="mensaje" id="mensaje">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="submit" value="Enviar" id="enviar" class="labelsForm btn btn-success">
+                        </div>
+                        <br>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <p style="font-size: 200%; margin-top: 15px;">
+                    Si necesitas visitarnos, nos encontramos en Centenario 55, Maipú, Región Metropolitana.<br>
+                    ¡Estaremos encantados en conocerte!<br><br>
+                    Lunes a viernes de 10:00 a 18:30. Fin de semana cerrado.<br>
+                    Hora actual:<p style="font-size: 200%;" id="hora"></p>
+                </p>
+                <div id="map"></div>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

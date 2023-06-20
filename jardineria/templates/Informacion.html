@@ -1,0 +1,52 @@
+{% extends "Base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Nosotros{% endblock %}</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'img/plant-logo.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script> 
+</head>
+<body>
+    <!-- PARRAFOS INFO -->
+    <div id="informacionParrafos" class="container-fluid">
+        <div>
+            <br><br><br>
+            <h1 class="display-1" style="text-align: center; color: #6D8C3E;">Nuestra misión.</h1>
+            <p style="font-size: 200%; text-align: center; color: #000000;">
+                <br>
+                Como institución tenemos la misión de mantener precios y un catálogo accesible para nuestros compradores y donar la mayor cantidad posible de nuestras ganancias a fundaciones sin fines de lucro. 
+                Esto lo logramos día a día siendo transparentes con la comunidad, eligiendo cautelosamente nuestros artículos y precios y manteniendo una perseverante actitud positiva.
+                <br><br><br>
+            </p>
+            <h1 class="display-1" style="text-align: center; color: #6D8C3E;">Nuestra visión.</h1>
+            <p style="font-size: 200%; text-align: center; color: #000000;">
+                <br>
+                Nuestro negocio comenzó tan solo como una idea de un grupo de vecinos para ayudar a la gente que lo necesita a través de donaciones. Durante el camino nos dimos cuenta de lo importante que era lograr un vivero para todos, donde de los más experimentados hasta los recién iniciados pudieran encontrar un lugar para 
+                hacer sus compras con una buena asesoría y con varias facilidades. Este siempre será nuestro norte y nos mantendremos firmes con el proyecto, buscando siempre maneras de seguir expandiéndonos y llegando a toda la gente que haga falta.
+                <br><br><br>
+            </p>
+        </div>
+        <!--VIDEO-->
+        <h1 class="display-1" style="text-align: center; color: #6D8C3E;">Video de nuestra institución:</h1>
+        <div id="video">
+            <div>
+                <iframe width="660" height="415" src="https://www.youtube.com/embed/83YeLYMiz_w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"></iframe>
+            </div>
+        </div>
+        <!--FIN VIDEO-->
+        <br>
+    </div>
+    <!--FIN PARRAFOS INFO-->
+</body>
+</html>
+{% endblock %}

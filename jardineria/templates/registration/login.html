@@ -1,0 +1,44 @@
+{% extends "Base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Inicia sesión{% endblock %}</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'img/plant-logo.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+</head>
+<body>
+    {% load crispy_forms_tags %}
+    <div id="informacionParrafos" class="container-fluid">
+        <img src="{% static 'img/blanco.png' %}" style="width: 100%; height: 150px;">
+        <h1 class="display-3 col-12 col-md-6 offset-md-3" style="color: #6d8c3e;">Inicia sesión</h1>
+        <br>
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="container-fluid">
+                    <div class="container-fluid">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <br>
+                            <a style="float: right;" href="{% url 'Inicio' %}">Volver al inicio</a>
+                            <button type="submit" class="btn btn-success" style="float: left;">Iniciar sesión</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="{% static 'img/blanco.png' %}" style="width: 100%; height: 300px;">
+    <img src="{% static 'img/blanco.png' %}" style="width: 100%; height: 150px;">
+</body>
+</html>
+{% endblock %}

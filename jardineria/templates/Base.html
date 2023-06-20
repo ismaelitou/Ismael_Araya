@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'img/plant-logo.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+</head>
+<body>
+    <!--MENÚ-->
+    <nav class="navbar navbar-expand-sm navbar-light">     
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">        <!--Definimos caracteristicas del boton-->
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <a href="{% url 'Inicio' %}" class="navbar-brand">       <!--Insertamos un logo-->
+            <img id="imgMenu" src="{% static 'img/gardencito.png' %}" width="100px" height="25px">
+        </a>
+
+        <div class="collapse navbar-collapse" id="opciones">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'Inicio' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'Informacion' %}">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'Catalogo' %}">Catálogo</a>
+                </li>
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'Contacto' %}">Contacto</a>
+                </li>
+
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" href="#"><b style="color: #6D8C3E;">Bienvenido {{ user.username }}</b></a>
+                </li>
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'logout' %}"><b style="color: #6D8C3E;">Cerrar sesión</b></a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'login' %}"><b style="color: #6D8C3E;">Inicia sesión</b></a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>      <!--Cierre del menú-->
+
+    <!-- CONTENIDO -->
+    {% block content %}
+    {% endblock %}
+
+    <!--FOOTER-->
+    <footer style="background-color: rgb(46, 46, 46);">
+        <div class="container d-flex justify-content-center py-4">
+            <button type="button" class="btn" style="background-color: #54456b00;">
+                <a href="https://www.instagram.com" target="blank"><img src="{% static 'img/instagram-icon.png' %}" alt="Instagram" width="40px" height="40px"></a>
+            </button>
+            <button type="button" class="btn" style="background-color: #54456b00;">
+                <a href="https://www.facebook.com" target="blank"><img src="{% static 'img/facebook-icon.webp' %}" alt="Facebook" width="40px" height="40px"></a>
+            </button>
+            <button type="button" class="btn" style="background-color: #54456b00;">
+                <a href="https://www.twitter.com" target="blank"><img src="{% static 'img/twitter-logo.png' %}" alt="Twitter" width="40px" height="40px"></a>
+            </button>
+            <div class="text-center text-white" style="font-size:small"><br>© 2023 Derechos reservados</div>
+        </div>
+    </footer>
+</body>
+</html>

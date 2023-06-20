@@ -1,0 +1,73 @@
+{% extends "Base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Crear producto{% endblock %}</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'img/plant-logo.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script src="{% static 'js/dom.js' %}"></script>
+    <script src="{% static 'js/validacion.js' %}"></script>
+</head>
+<body>
+    <div id="informacionParrafos" class="container-fluid">
+        <div style="margin-bottom: -20px;" class="container-fluid">
+            <br>
+            <h1 class="display-3" style="color: #6d8c3e;">Crear un producto</h1>
+            <br>
+            <form method="POST" id="mi-formulario2" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <label for="{{ productoform.field.name }}">{{ productoform.id.label }}</label>
+                    {{ productoform.id }}
+                </div>
+                <br>
+                <div class="row">
+                    <label for="{{ productoform.field.name }}">{{ productoform.nombre.label }}</label>
+                    {{ productoform.nombre }}
+                </div>
+                <br>
+                <div class="row">
+                    <label for="{{ productoform.field.name }}">{{ productoform.descripcion.label }}</label>
+                    {{ productoform.descripcion }}
+                </div>
+                <br>
+                <div class="row">
+                    <label for="{{ productoform.field.name }}">{{ productoform.precio.label }}</label>
+                    {{ productoform.precio }}
+                </div>
+                <br>
+                <div class="row">
+                    <label for="{{ productoform.field.name }}">{{ productoform.stock.label }}</label>
+                    {{ productoform.stock }}
+                </div>
+                <br>
+                <div class="row">
+                    <label for="{{ productoform.field.name }}">{{ productoform.imagen.label }}</label>
+                    {{ productoform.imagen }}
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md">
+                        <a style="float: right;" href="{% url 'Inicio' %}">Volver al inicio</a>
+                        <input type="submit" value="Crear" class="btn btn-success" style="float: left;">
+                    </div>
+                </div>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

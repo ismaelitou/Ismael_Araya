@@ -1,0 +1,141 @@
+/* Selector universal: permite inicializar parámetros y/o atributos */
+*{
+    margin: 0px;       /* Margen */
+    padding:0px;      /* Acolchado/Relleno */
+}
+
+/* Catálogo */
+#itemCatalogo{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#catalogoInfo{
+    background-color: rgb(241, 241, 241);
+}
+.zoom {
+    transition: transform .2s;
+}
+.zoom:hover {
+    transform: scale(1.2);
+}
+
+/* Carrusel */
+#carouselInfo{
+    margin-top: 50px;
+    background-color: #6d8c3e;
+}
+
+/* Varios */
+#informacionParrafos{
+    margin-top: 0px;
+    background-color: rgb(241, 241, 241);
+}
+#imgParrafo{
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+iframe, object, embed {
+    max-width: 100%;
+    max-height: 100%;
+}
+#video{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+#parrafos{
+    margin-top: 50px;
+    background-color: rgb(241, 241, 241);
+}
+#inicioSesion{
+    margin-top: 0px;
+    background-color: rgb(241, 241, 241);
+}
+
+/* Formulario */
+.error-control{
+    border: 1px solid red;
+}
+label.error{
+    color: red;
+    width: 250px;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#formulario{
+    background-color: rgb(241, 241, 241);
+}
+.labelsForm{
+    font-size: 20px;
+}
+.inputFormato {
+    width: 350px;
+}
+.formatoMensaje {
+    text-align: left;
+    height: 200px;
+    width: 350px;
+}
+
+/* Mapa */
+#map{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    height: 600px;
+    width: 90%;
+}
+
+/* Selector de etiqueta (menú, en este caso) */
+nav{
+    background-color: rgb(241, 241, 241);       /* Color de fondo */
+    padding: 20px;
+}
+ul{
+    list-style-type: none;      /* Se eliminan las viñetas (puntitos, numeración, etc.) de la lista */
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;       /* Evitamos que elementos se superpongan al menú */
+}
+li{
+    float: left;        /* Permite que elementos "floten" ubicados dentro del body */
+}
+li a{       /* "li" depende de "a" (dejar un espacio y abrir llaves) */
+    display: block;     /* Opciones del menú en línea */
+    padding: 0px;       /* Acolchado entre las distintas opciones */
+    text-decoration: none;      /* Eliminamos subrayado de los enlaces*/
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif; 
+    color: orangered;
+    margin-left: 20px;
+}
+body {
+    background-color: #6D8C3E;
+    position: relative;
+    min-height: 100%;
+    min-height: 100vh;
+}
+#generalFontMenu {
+  font-size: 20px;
+  color: #6D8C3E;
+}
+#authFontMenu {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+/* Selector de etiqueta (footer) */
+footer{
+    position: relative;
+    padding: 20px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 129px;
+}
