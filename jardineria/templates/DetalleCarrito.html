@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Inicia sesión{% endblock %}</title>
+    <title>{% block title %}Detalle de compra{% endblock %}</title>
     {% load static %}
     <link rel="icon" type="image/x-icon" href="{% static 'img/plant-logo.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
@@ -16,22 +16,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
 </head>
 <body>
-    {% load crispy_forms_tags %}
     <div id="informacionParrafos" class="container-fluid">
         <img src="{% static 'img/blanco.png' %}" style="width: 100%; height: 150px;">
-        <h1 class="display-3 col-12 col-md-6 offset-md-3" style="color: #6d8c3e;">Inicia sesión</h1>
         <br>
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3">
                 <div class="container-fluid">
                     <div class="container-fluid">
-                        <form method="post">
-                            {% csrf_token %}
-                            {{ form | crispy }}
-                            <br>
-                            <a style="float: right;" href="{% url 'Inicio' %}">Volver al inicio</a>
-                            <button type="submit" class="btn btn-success" style="float: left;">Iniciar sesión</button>
-                        </form>
+                        <h3 class="display-3" style="color: #6d8c3e;">Detalle de compra</h3><br><h6>Fecha: {{ fecha }}</h6>
+                        <hr>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="color: #6d8c3e;">N° Boleta</th>
+                                    <th style="color: #6d8c3e;">Producto</th>
+                                    <th style="color: #6d8c3e;">Cantidad</th>
+                                    <th style="color: #6d8c3e;">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for prod in productos%}
+                                <tr>
+                                    <td>{{ prod.id_boleta }}</td>
+                                    <td>{{ prod.id_producto }}</td>
+                                    <td>{{ prod.cantidad }}</td>
+                                    <td>{{ prod.subtotal }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                            <tr><td><h6 style="font-size: 20px;"><b>Total:</b> ${{ total }}</h6></td>
+                            </tr>
+                        </table>
+                        <a style="float: right;" href="{% url 'Inicio' %}">Volver al inicio</a>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Inicia sesión{% endblock %}</title>
+    <title>{% block title %}Registrar{% endblock %}</title>
     {% load static %}
     <link rel="icon" type="image/x-icon" href="{% static 'img/plant-logo.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
@@ -19,25 +19,24 @@
     {% load crispy_forms_tags %}
     <div id="informacionParrafos" class="container-fluid">
         <img src="{% static 'img/blanco.png' %}" style="width: 100%; height: 150px;">
-        <h1 class="display-3 col-12 col-md-6 offset-md-3" style="color: #6d8c3e;">Inicia sesión</h1>
+        <h1 class="display-3 col-12 col-md-6 offset-md-3" style="color: #6d8c3e;">Registro</h1>
         <br>
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3">
                 <div class="container-fluid">
                     <div class="container-fluid">
-                        <form method="post">
+                        <form action="#" method="post">
                             {% csrf_token %}
                             {{ form | crispy }}
                             <br>
                             <a style="float: right;" href="{% url 'Inicio' %}">Volver al inicio</a>
-                            <button type="submit" class="btn btn-success" style="float: left;">Iniciar sesión</button>
+                            <input type="submit" value="Registrar" class="btn btn-success">
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <img src="{% static 'img/blanco.png' %}" style="width: 100%; height: 225px;">
     <img src="{% static 'img/blanco.png' %}" style="width: 100%; height: 150px;">
 </body>
 </html>

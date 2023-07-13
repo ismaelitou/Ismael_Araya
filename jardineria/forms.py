@@ -63,3 +63,6 @@ class ProductoForm(forms.ModelForm):
                 }
             ),
         }
+
+class RegistroForm(UserCreationForm):
+    pass

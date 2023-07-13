@@ -26,6 +26,40 @@
 
         <div class="collapse navbar-collapse" id="opciones">
             <ul class="navbar-nav">
+                {% if user.is_superuser %}
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="nav-link" style="color: #ff5555;" href="#"><i>Administrador</i></a>
+                </li>
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" style="color: #ff5555;" href="{% url 'Crear' %}"><b>Crear producto</b></a>
+                </li>
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'Carrito' %}"><b style="color: #6D8C3E;">Carrito</b></a>
+                </li>
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'logout' %}"><b style="color: #6D8C3E;">Cerrar sesión</b></a>
+                </li>
+                {% elif user.is_authenticated %}
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="nav-link" style="color: #727272;" href="#"><i>{{ user.username }}</i></a>
+                </li>
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'Carrito' %}"><b style="color: #6D8C3E;">Carrito</b></a>
+                </li>
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'logout' %}"><b style="color: #6D8C3E;">Cerrar sesión</b></a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'login' %}"><b style="color: #6D8C3E;">Inicia sesión</b></a>
+                </li>
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'Signin' %}"><b style="color: #6D8C3E;">Registrate</b></a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a id="generalFontMenu" class="nav-link pe-none" href="#"><b style="color: #6D8C3E;">•</b></a>
+                </li>
                 <li class="nav-item">
                     <a id="generalFontMenu" class="zoom nav-link" href="{% url 'Inicio' %}">Inicio</a>
                 </li>
@@ -38,19 +72,6 @@
                 <li class="nav-item">
                     <a id="generalFontMenu" class="zoom nav-link" href="{% url 'Contacto' %}">Contacto</a>
                 </li>
-
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a id="generalFontMenu" class="zoom nav-link" href="#"><b style="color: #6D8C3E;">Bienvenido {{ user.username }}</b></a>
-                </li>
-                <li class="nav-item">
-                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'logout' %}"><b style="color: #6D8C3E;">Cerrar sesión</b></a>
-                </li>
-                {% else %}
-                <li class="nav-item">
-                    <a id="generalFontMenu" class="zoom nav-link" href="{% url 'login' %}"><b style="color: #6D8C3E;">Inicia sesión</b></a>
-                </li>
-                {% endif %}
             </ul>
         </div>
     </nav>      <!--Cierre del menú-->
